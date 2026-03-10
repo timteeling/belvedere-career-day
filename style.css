@@ -249,29 +249,63 @@
 }
 
 /* ============================================================
-   SLIDES 6 & 7 — WHAT TENABLE DOES
+   SLIDE 6 — WHAT IS CYBERSECURITY? (TERMS)
+============================================================ */
+.terms-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 0 auto;
+  max-width: 1060px;
+}
+
+.term-card {
+  background: rgba(0,240,255,0.05);
+  border: 2px solid rgba(0,240,255,0.22);
+  border-radius: 10px;
+  padding: 12px 14px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.term-word {
+  font-size: 0.88em;
+  font-weight: 700;
+  color: var(--cyan);
+}
+
+.term-def {
+  font-size: 0.76em;
+  color: #99aacc;
+  line-height: 1.4;
+}
+
+/* ============================================================
+   SLIDES 7 & 8 — WHAT TENABLE DOES
 ============================================================ */
 .analogy-slide {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 44px;
-  margin-top: 0.4em;
+  gap: 28px;
+  margin-top: 0.2em;
   text-align: left;
 }
 
 .analogy-icon-big {
-  font-size: 5.5em;
+  font-size: 4.0em;
   line-height: 1;
   flex-shrink: 0;
 }
 
-.analogy-body { max-width: 620px; }
+.analogy-body { max-width: 640px; }
 
 .analogy-body p {
-  font-size: 1.0em;
+  font-size: 0.82em;
   color: #aabbd0;
-  line-height: 1.65;
+  line-height: 1.6;
   margin: 0;
 }
 
