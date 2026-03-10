@@ -1,0 +1,673 @@
+/* ============================================================
+   VARIABLES & GLOBAL
+============================================================ */
+:root {
+  --cyan:  #00f0ff;
+  --cyan2: #0099cc;
+  --green: #00e676;
+  --red:   #f44336;
+  --bg:    #041e42;
+}
+
+body,
+.reveal-viewport { background: var(--bg); }
+
+.reveal .slide-background { background: var(--bg) !important; }
+
+.reveal {
+  font-family: 'Instrument Sans', 'Segoe UI', sans-serif;
+}
+
+.reveal .slides section {
+  text-align: center;
+  box-sizing: border-box;
+  padding: 28px 52px;
+}
+
+.reveal h1 {
+  font-size: 2.6em;
+  font-weight: 800;
+  color: var(--cyan);
+  text-shadow: 0 0 40px rgba(0, 240, 255, 0.35);
+  margin-bottom: 0.2em;
+  letter-spacing: -0.01em;
+}
+
+.reveal h2 {
+  font-size: 1.9em;
+  font-weight: 800;
+  color: var(--cyan);
+  margin-bottom: 0.35em;
+  letter-spacing: -0.01em;
+}
+
+.reveal h3 { font-size: 1.4em; font-weight: 600; color: #dde; }
+.reveal p  { font-size: 1.15em; line-height: 1.6; }
+.reveal li { font-size: 1.1em;  line-height: 1.8; list-style: none; }
+
+.float-in { animation: floatIn 0.4s ease-out both; }
+
+/* ============================================================
+   SLIDE 1 — TITLE
+============================================================ */
+.title-tagline {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--cyan), var(--cyan2));
+  color: #041e42;
+  padding: 0.3em 1.4em;
+  border-radius: 40px;
+  font-size: 1.25em;
+  font-weight: 800;
+  margin-top: 0.4em;
+}
+
+.tenable-wordmark {
+  font-size: 2.2em;
+  font-weight: 800;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin: 0.4em 0 0.15em;
+}
+
+/* ============================================================
+   SLIDE 2 — WHO AM I
+============================================================ */
+.profile-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 0.5em;
+}
+
+.profile-avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0,240,255,0.15), rgba(0,240,255,0.04));
+  border: 3px solid var(--cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5em;
+  flex-shrink: 0;
+  box-shadow: 0 0 40px rgba(0,240,255,0.18);
+}
+
+.profile-facts { text-align: left; }
+
+.profile-facts p {
+  margin: 0.45em 0;
+  font-size: 1.2em;
+}
+
+/* ============================================================
+   SLIDE 3 — WHERE I WORK
+============================================================ */
+.tenable-logo-img {
+  max-height: 64px;
+  width: auto;
+  display: block;
+  margin: 0 auto 0.2em;
+  filter: drop-shadow(0 0 12px rgba(0,240,255,0.2));
+}
+
+.tenable-tagline {
+  color: #6688aa;
+  font-style: italic;
+  font-size: 1em !important;
+  margin: 0 0 0.6em !important;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+.stat-card {
+  background: rgba(0,240,255,0.06);
+  border: 2px solid rgba(0,240,255,0.3);
+  border-radius: 14px;
+  padding: 18px 12px;
+  font-size: 0.95em;
+  color: #99bbcc;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.2em;
+  font-weight: 800;
+  color: var(--cyan);
+  line-height: 1.1;
+  margin-bottom: 0.15em;
+}
+
+/* ============================================================
+   SLIDE 4 — HOW I GOT HERE  (horizontal steps)
+============================================================ */
+.steps-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0.6em auto 0;
+  max-width: 1140px;
+}
+
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+  text-align: center;
+  padding: 0 6px;
+}
+
+/* connecting line between steps */
+.step-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 1.15em;
+  left: calc(50% + 1.3em);
+  right: calc(-50% + 1.3em);
+  height: 2px;
+  background: linear-gradient(90deg, var(--cyan), var(--cyan2));
+  opacity: 0.45;
+}
+
+.step-icon {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cyan), var(--cyan2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0.5em;
+  flex-shrink: 0;
+  box-shadow: 0 0 16px rgba(0,240,255,0.3);
+}
+
+.step-text {
+  font-size: 0.88em;
+  color: #99aacc;
+  line-height: 1.45;
+}
+
+.tip-box {
+  background: rgba(0,240,255,0.05);
+  border: 1px solid rgba(0,240,255,0.22);
+  border-radius: 10px;
+  padding: 0.55em 1.2em;
+  margin: 0.9em auto 0;
+  font-size: 1em;
+  color: var(--cyan);
+  max-width: 720px;
+}
+
+/* ============================================================
+   SLIDE 5 — SCHOOL
+============================================================ */
+.school-row {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 0.6em;
+}
+
+.school-card {
+  background: rgba(0,153,204,0.09);
+  border: 2px solid rgba(0,153,204,0.35);
+  border-radius: 16px;
+  padding: 22px 28px;
+  flex: 1;
+  max-width: 480px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  text-align: left;
+}
+
+.school-card .school-icon { font-size: 3em; flex-shrink: 0; }
+
+.school-card .school-name {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #fff;
+}
+
+.school-card .school-detail {
+  font-size: 0.95em;
+  color: #7799bb;
+  margin-top: 5px;
+}
+
+/* ============================================================
+   SLIDES 6 & 7 — WHAT TENABLE DOES (one analogy per slide)
+============================================================ */
+.analogy-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 52px;
+  margin-top: 0.5em;
+  text-align: left;
+}
+
+.analogy-icon-big {
+  font-size: 7em;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.analogy-body { max-width: 640px; }
+
+.analogy-body p {
+  font-size: 1.2em;
+  color: #aabbd0;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.analogy-body strong { color: #fff; }
+
+/* ============================================================
+   SLIDES 8 & 9 — WOW FACTS
+============================================================ */
+.facts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 0.55em auto 0;
+  max-width: 1060px;
+}
+
+.fact-card {
+  background: rgba(0,240,255,0.04);
+  border-left: 5px solid var(--cyan);
+  border-radius: 0 12px 12px 0;
+  padding: 14px 20px;
+  text-align: left;
+  font-size: 1.05em;
+  color: #aabbd0;
+  line-height: 1.5;
+}
+
+.fact-card.span2 { grid-column: 1 / -1; }
+
+/* ============================================================
+   GAME — CONTAINER
+============================================================ */
+#game-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+/* ============================================================
+   GAME — SHARED COMPONENTS
+============================================================ */
+.game-progress {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 0.55em;
+}
+
+.progress-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  border: 2px solid rgba(255,255,255,0.3);
+}
+.progress-dot.done   { background: var(--green); border-color: var(--green); }
+.progress-dot.active { background: var(--cyan);  border-color: var(--cyan); animation: pulseDot 1.2s infinite; }
+
+.game-heading {
+  font-size: 1.55em;
+  font-weight: 800;
+  color: var(--cyan);
+  margin: 0 0 0.12em;
+}
+
+.game-subheading {
+  font-size: 1.0em;
+  color: #8899bb;
+  margin-bottom: 0.55em;
+  max-width: 620px;
+  line-height: 1.5;
+}
+
+/* Primary CTA */
+.game-btn {
+  background: linear-gradient(135deg, var(--cyan), var(--cyan2));
+  color: #041e42;
+  border: none;
+  padding: 0.55em 1.8em;
+  font-size: 1.2em;
+  font-weight: 800;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  margin: 0.35em;
+  box-shadow: 0 4px 20px rgba(0,240,255,0.28);
+  font-family: inherit;
+}
+.game-btn:hover { transform: scale(1.05); box-shadow: 0 6px 26px rgba(0,240,255,0.5); }
+.game-btn.secondary {
+  background: rgba(255,255,255,0.07);
+  color: #aabbd0;
+  border: 2px solid rgba(255,255,255,0.2);
+  box-shadow: none;
+}
+.game-btn.secondary:hover { background: rgba(255,255,255,0.14); }
+
+/* Choice buttons */
+.choice-btn {
+  display: block;
+  width: 86%;
+  max-width: 580px;
+  margin: 0.3em auto;
+  background: rgba(255,255,255,0.05);
+  border: 2px solid rgba(255,255,255,0.16);
+  color: #dde;
+  padding: 0.6em 1.2em;
+  font-size: 1.1em;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.18s, border-color 0.18s, transform 0.1s;
+  font-family: inherit;
+}
+.choice-btn:hover:not(.locked) { background: rgba(0,240,255,0.1); border-color: var(--cyan); transform: translateX(5px); }
+.choice-btn.correct { background: rgba(0,230,118,0.16); border-color: var(--green) !important; color: #fff; }
+.choice-btn.wrong   { background: rgba(244,67,54,0.16);  border-color: var(--red)   !important; color: #fff; animation: wobble 0.45s; }
+.choice-btn.locked  { cursor: default; }
+
+.feedback-box {
+  background: rgba(4,30,66,0.85);
+  border: 2px solid var(--cyan);
+  border-radius: 12px;
+  padding: 0.8em 1.3em;
+  margin: 0.5em auto 0.35em;
+  max-width: 620px;
+  font-size: 1.0em;
+  color: #dde;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   GAME — INTRO
+============================================================ */
+.intro-badge {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0,240,255,0.2), rgba(0,153,204,0.05));
+  border: 3px solid var(--cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.8em;
+  margin: 0 auto 0.35em;
+  box-shadow: 0 0 40px rgba(0,240,255,0.2);
+}
+
+/* ============================================================
+   GAME — CASTLE SCENE
+============================================================ */
+.castle-scene-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.vuln-counter {
+  font-size: 1.1em;
+  color: var(--cyan);
+  margin-bottom: 0.4em;
+  font-weight: 700;
+}
+
+.castle-visual {
+  position: relative;
+  background: linear-gradient(180deg, #020c1b 0%, #041e42 55%, #08200e 100%);
+  border-radius: 14px;
+  border: 2px solid rgba(0,240,255,0.18);
+  overflow: hidden;
+  height: 210px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.castle-bg {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-end;
+  pointer-events: none;
+  user-select: none;
+}
+
+.c-tower {
+  width: 70px;
+  background: #0e2240;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.c-tower .battlements {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  top: -14px;
+}
+.c-tower .battlement { width: 12px; height: 14px; background: #0e2240; border-radius: 2px 2px 0 0; }
+
+.c-wall {
+  background: #142d50;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.c-gate {
+  width: 48px;
+  height: 60px;
+  background: #020c1b;
+  border-radius: 50% 50% 0 0 / 60% 60% 0 0;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.star-field { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; }
+.star       { position: absolute; border-radius: 50%; background: white; opacity: 0.45; }
+
+.vuln-spot {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 6px;
+  transition: transform 0.2s, filter 0.2s;
+  z-index: 10;
+}
+.vuln-spot:not(.found):hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 10px rgba(0,240,255,0.8));
+}
+.vuln-spot.found {
+  cursor: default;
+  filter: drop-shadow(0 0 12px rgba(244,67,54,0.9));
+}
+
+.vuln-icon { font-size: 2.2em; display: block; line-height: 1; }
+
+.vuln-tag {
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--red);
+  color: white;
+  padding: 3px 10px;
+  border-radius: 8px;
+  font-size: 0.62em;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s;
+  font-weight: 700;
+  font-family: inherit;
+}
+.vuln-spot.found .vuln-tag { opacity: 1; }
+
+.vuln-spot:not(.found)::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid var(--cyan);
+  animation: pulseRing 2s infinite;
+}
+
+/* ============================================================
+   GAME — SCROLL (PHISHING)
+============================================================ */
+.scroll-visual {
+  background: linear-gradient(135deg, #f5e6c8, #e8d5a3);
+  color: #2a1a00;
+  border-radius: 12px;
+  padding: 0.8em 1.5em;
+  margin: 0.4em auto;
+  max-width: 500px;
+  border: 3px solid #8B4513;
+  box-shadow: 0 6px 24px rgba(139,69,19,0.35);
+  font-family: Georgia, serif;
+  font-size: 1.0em;
+  line-height: 1.55;
+  position: relative;
+}
+.scroll-visual .scroll-cap { position: absolute; font-size: 2em; top: -0.45em; }
+.scroll-visual .scroll-cap.left  { left:  0.2em; }
+.scroll-visual .scroll-cap.right { right: 0.2em; }
+.scroll-flag { color: #cc0000; font-weight: bold; }
+
+/* ============================================================
+   GAME — STORY BOX
+============================================================ */
+.story-box {
+  background: rgba(4,30,66,0.7);
+  border: 2px solid rgba(0,153,204,0.35);
+  border-radius: 12px;
+  padding: 0.7em 1.3em;
+  margin: 0.4em auto;
+  max-width: 560px;
+  font-size: 1.0em;
+  color: #aabbd0;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   GAME — VICTORY
+============================================================ */
+.victory-badge {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cyan), var(--cyan2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.8em;
+  margin: 0 auto 0.25em;
+  box-shadow: 0 0 50px rgba(0,240,255,0.5);
+  animation: popIn 0.6s cubic-bezier(0.175,0.885,0.32,1.275) both;
+}
+
+.victory-message {
+  font-size: 1.05em;
+  color: #aabbd0;
+  max-width: 580px;
+  margin: 0.4em auto;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   CONFETTI
+============================================================ */
+#confetti-container {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -20px;
+  border-radius: 2px;
+  animation: confettiFall linear forwards;
+}
+
+/* ============================================================
+   ANIMATIONS
+============================================================ */
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes wobble {
+  0%,100% { transform: translateX(0); }
+  25%     { transform: translateX(-12px); }
+  75%     { transform: translateX(12px); }
+}
+
+@keyframes pulseRing {
+  0%   { opacity: 0.85; transform: scale(1); }
+  70%  { opacity: 0;    transform: scale(1.6); }
+  100% { opacity: 0;    transform: scale(1.6); }
+}
+
+@keyframes pulseDot {
+  0%,100% { box-shadow: 0 0 0 0 rgba(0,240,255,0.5); }
+  50%      { box-shadow: 0 0 0 6px rgba(0,240,255,0); }
+}
+
+@keyframes popIn {
+  from { transform: scale(0) rotate(-180deg); opacity: 0; }
+  80%  { transform: scale(1.15) rotate(8deg); }
+  to   { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes confettiFall {
+  from { top: -20px; opacity: 1;   transform: rotate(0deg)   translateX(0); }
+  to   { top: 105vh; opacity: 0.4; transform: rotate(720deg) translateX(var(--drift)); }
+}

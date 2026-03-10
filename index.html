@@ -3,675 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Career Day — Cybersecurity with Tenable! 🏰</title>
+  <title>Career Day — Cybersecurity with Tenable!</title>
 
+  <!-- Instrument Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Reveal.js -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/night.css">
 
-  <style>
-    /* ============================================================
-       VARIABLES & GLOBAL
-    ============================================================ */
-    :root {
-      --gold:   #FFD700;
-      --green:  #00e676;
-      --red:    #f44336;
-      --blue:   #42a5f5;
-      --purple: #ce93d8;
-      --bg-dark: #0d0d2b;
-    }
-
-    body { background: var(--bg-dark); }
-
-    .reveal {
-      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-    }
-
-    .reveal .slides section {
-      text-align: center;
-      height: 100%;
-      box-sizing: border-box;
-      padding: 20px 40px;
-    }
-
-    .reveal h1 {
-      font-size: 2.6em;
-      color: var(--gold);
-      text-shadow: 0 0 30px rgba(255,215,0,0.4);
-      margin-bottom: 0.2em;
-    }
-    .reveal h2 {
-      font-size: 2em;
-      color: var(--gold);
-      margin-bottom: 0.4em;
-    }
-    .reveal h3 { font-size: 1.5em; color: #ddd; }
-    .reveal p  { font-size: 1.2em; line-height: 1.6; }
-    .reveal li { font-size: 1.15em; line-height: 1.8; list-style: none; }
-
-    /* ============================================================
-       SHARED UTILITIES
-    ============================================================ */
-    .placeholder {
-      color: #ff9800;
-      background: rgba(255,152,0,0.12);
-      border: 1px dashed #ff9800;
-      border-radius: 4px;
-      padding: 2px 8px;
-      font-style: italic;
-    }
-
-    .emoji-xl  { font-size: 5em;  display: block; margin: 0.15em auto; line-height: 1; }
-    .emoji-lg  { font-size: 3em;  display: block; margin: 0.15em auto; line-height: 1; }
-    .emoji-med { font-size: 2em;  display: inline-block; }
-
-    .float-in {
-      animation: floatIn 0.4s ease-out both;
-    }
-
-    /* ============================================================
-       SLIDE 1 — TITLE
-    ============================================================ */
-    .title-tagline {
-      display: inline-block;
-      background: linear-gradient(135deg, #FFD700, #FFA500);
-      color: #000;
-      padding: 0.3em 1.2em;
-      border-radius: 30px;
-      font-size: 1.3em;
-      font-weight: bold;
-      margin-top: 0.4em;
-    }
-
-    .tenable-wordmark {
-      font-size: 2em;
-      font-weight: 900;
-      letter-spacing: 6px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin: 0.5em 0 0.2em;
-    }
-
-    /* ============================================================
-       SLIDE 2 — WHO AM I
-    ============================================================ */
-    .profile-layout {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-      margin-top: 0.6em;
-    }
-
-    .profile-avatar {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, rgba(255,215,0,0.15), rgba(255,215,0,0.05));
-      border: 3px solid var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4.5em;
-      flex-shrink: 0;
-      box-shadow: 0 0 30px rgba(255,215,0,0.2);
-    }
-
-    .profile-facts {
-      text-align: left;
-      max-width: 480px;
-    }
-
-    .profile-facts p {
-      margin: 0.4em 0;
-      font-size: 1.15em;
-    }
-
-    /* ============================================================
-       SLIDE 3 — WHERE I WORK
-    ============================================================ */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin: 0.8em auto;
-      max-width: 820px;
-    }
-
-    .stat-card {
-      background: rgba(255,215,0,0.07);
-      border: 2px solid rgba(255,215,0,0.4);
-      border-radius: 14px;
-      padding: 18px;
-      font-size: 1.05em;
-      color: #ccc;
-    }
-
-    .stat-number {
-      display: block;
-      font-size: 2.2em;
-      font-weight: 900;
-      color: var(--gold);
-      line-height: 1.1;
-    }
-
-    /* ============================================================
-       SLIDE 4 — HOW I GOT HERE
-    ============================================================ */
-    .timeline {
-      list-style: none;
-      padding: 0;
-      margin: 0.4em auto;
-      max-width: 680px;
-      text-align: left;
-    }
-
-    .timeline li {
-      position: relative;
-      padding: 0.5em 0.5em 0.5em 3.2em;
-      border-left: 3px solid var(--gold);
-      margin-bottom: 0.6em;
-      font-size: 1.1em;
-      color: #ddd;
-    }
-
-    .timeline li::before {
-      content: attr(data-icon);
-      position: absolute;
-      left: -0.8em;
-      top: 0.3em;
-      font-size: 1.3em;
-    }
-
-    .tip-box {
-      background: rgba(255,215,0,0.08);
-      border: 1px solid rgba(255,215,0,0.3);
-      border-radius: 10px;
-      padding: 0.6em 1.2em;
-      margin-top: 0.8em;
-      font-size: 1.05em;
-      color: var(--gold);
-      max-width: 680px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* ============================================================
-       SLIDE 5 — SCHOOL
-    ============================================================ */
-    .school-card {
-      background: rgba(66,165,245,0.1);
-      border: 2px solid rgba(66,165,245,0.4);
-      border-radius: 14px;
-      padding: 18px 24px;
-      margin: 12px auto;
-      max-width: 700px;
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      text-align: left;
-    }
-
-    .school-card .school-icon { font-size: 2.8em; flex-shrink: 0; }
-
-    .school-card .school-name {
-      font-size: 1.2em;
-      font-weight: bold;
-      color: #fff;
-    }
-
-    .school-card .school-detail {
-      font-size: 0.95em;
-      color: #aaa;
-      margin-top: 4px;
-    }
-
-    /* ============================================================
-       SLIDE 6 — WHAT TENABLE DOES
-    ============================================================ */
-    .analogy-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-      margin: 0.6em auto;
-      max-width: 880px;
-    }
-
-    .analogy-card {
-      background: rgba(80,80,180,0.15);
-      border: 2px solid rgba(121,134,203,0.5);
-      border-radius: 18px;
-      padding: 22px;
-      font-size: 1.0em;
-      text-align: left;
-      color: #ccc;
-      line-height: 1.6;
-    }
-
-    .analogy-card .analogy-icon {
-      font-size: 3em;
-      display: block;
-      margin-bottom: 0.3em;
-    }
-
-    .analogy-card strong { color: #fff; }
-
-    /* ============================================================
-       SLIDE 7 — WOW FACTS
-    ============================================================ */
-    .fact-card {
-      background: rgba(255,215,0,0.06);
-      border-left: 5px solid var(--gold);
-      border-radius: 0 12px 12px 0;
-      padding: 12px 20px;
-      margin: 10px auto;
-      max-width: 800px;
-      text-align: left;
-      font-size: 1.1em;
-      color: #ddd;
-      line-height: 1.5;
-    }
-
-    /* ============================================================
-       GAME SLIDE — CONTAINER
-    ============================================================ */
-    #game-container {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 480px;
-      padding: 10px;
-      box-sizing: border-box;
-    }
-
-    /* ============================================================
-       GAME — SHARED COMPONENTS
-    ============================================================ */
-    .game-progress {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 0.6em;
-    }
-
-    .progress-dot {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.2);
-      border: 2px solid rgba(255,255,255,0.4);
-      transition: background 0.3s;
-    }
-    .progress-dot.done   { background: var(--green); border-color: var(--green); }
-    .progress-dot.active { background: var(--gold);  border-color: var(--gold); animation: pulseDot 1.2s infinite; }
-
-    .game-heading {
-      font-size: 1.6em;
-      color: var(--gold);
-      font-weight: bold;
-      margin: 0 0 0.15em;
-    }
-
-    .game-subheading {
-      font-size: 1.05em;
-      color: #bbb;
-      margin-bottom: 0.6em;
-      max-width: 640px;
-      line-height: 1.5;
-    }
-
-    /* Primary CTA button */
-    .game-btn {
-      background: linear-gradient(135deg, #FFD700, #FFA500);
-      color: #000;
-      border: none;
-      padding: 0.6em 2em;
-      font-size: 1.25em;
-      font-weight: bold;
-      border-radius: 40px;
-      cursor: pointer;
-      transition: transform 0.15s, box-shadow 0.15s;
-      margin: 0.4em;
-      box-shadow: 0 4px 18px rgba(255,165,0,0.35);
-    }
-    .game-btn:hover { transform: scale(1.05); box-shadow: 0 6px 24px rgba(255,165,0,0.5); }
-    .game-btn.secondary {
-      background: rgba(255,255,255,0.1);
-      color: #ddd;
-      border: 2px solid rgba(255,255,255,0.25);
-      box-shadow: none;
-    }
-    .game-btn.secondary:hover { background: rgba(255,255,255,0.18); }
-
-    /* Multiple-choice buttons */
-    .choice-btn {
-      display: block;
-      width: 88%;
-      max-width: 600px;
-      margin: 0.35em auto;
-      background: rgba(255,255,255,0.07);
-      border: 2px solid rgba(255,255,255,0.2);
-      color: #eee;
-      padding: 0.65em 1.3em;
-      font-size: 1.15em;
-      border-radius: 14px;
-      cursor: pointer;
-      text-align: left;
-      transition: background 0.2s, border-color 0.2s, transform 0.1s;
-    }
-    .choice-btn:hover:not(.locked) { background: rgba(255,215,0,0.12); border-color: var(--gold); transform: translateX(6px); }
-    .choice-btn.correct { background: rgba(0,230,118,0.2); border-color: var(--green) !important; color: #fff; }
-    .choice-btn.wrong   { background: rgba(244,67,54,0.2);  border-color: var(--red) !important;   color: #fff; animation: wobble 0.45s; }
-    .choice-btn.locked  { cursor: default; }
-
-    /* Feedback box */
-    .feedback-box {
-      background: rgba(0,0,0,0.55);
-      border: 2px solid var(--gold);
-      border-radius: 14px;
-      padding: 0.9em 1.4em;
-      margin: 0.6em auto 0.4em;
-      max-width: 640px;
-      font-size: 1.05em;
-      color: #eee;
-      line-height: 1.6;
-    }
-
-    /* ============================================================
-       GAME — INTRO SCENE
-    ============================================================ */
-    .intro-badge {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, rgba(255,215,0,0.2), rgba(255,165,0,0.05));
-      border: 3px solid var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4em;
-      margin: 0 auto 0.4em;
-      box-shadow: 0 0 40px rgba(255,215,0,0.2);
-    }
-
-    /* ============================================================
-       GAME — CASTLE SCENE
-    ============================================================ */
-    .castle-scene-wrapper {
-      width: 100%;
-      max-width: 760px;
-      margin: 0 auto;
-    }
-
-    .vuln-counter {
-      font-size: 1.15em;
-      color: var(--gold);
-      margin-bottom: 0.5em;
-      font-weight: bold;
-    }
-
-    /* The castle visual */
-    .castle-visual {
-      position: relative;
-      background: linear-gradient(180deg, #0a0a1e 0%, #1a1a4e 55%, #1e2d0e 100%);
-      border-radius: 16px;
-      border: 2px solid rgba(255,215,0,0.25);
-      overflow: hidden;
-      height: 230px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-    }
-
-    /* CSS castle shape layer */
-    .castle-bg {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      align-items: flex-end;
-      gap: 0;
-      pointer-events: none;
-      user-select: none;
-    }
-
-    .c-tower {
-      width: 70px;
-      background: #3a3a5c;
-      border-radius: 4px 4px 0 0;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .c-tower .battlements {
-      display: flex;
-      gap: 5px;
-      position: absolute;
-      top: -14px;
-    }
-    .c-tower .battlement { width: 12px; height: 14px; background: #3a3a5c; border-radius: 2px 2px 0 0; }
-
-    .c-wall {
-      background: #4a4a6c;
-      border-radius: 2px 2px 0 0;
-      position: relative;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-    }
-
-    .c-gate {
-      width: 48px;
-      height: 64px;
-      background: #0a0a1e;
-      border-radius: 50% 50% 0 0 / 60% 60% 0 0;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    /* Star decorations on castle bg */
-    .star-field {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      pointer-events: none;
-    }
-    .star {
-      position: absolute;
-      border-radius: 50%;
-      background: white;
-      opacity: 0.6;
-    }
-
-    /* Clickable vulnerability spots */
-    .vuln-spot {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      cursor: pointer;
-      border-radius: 50%;
-      padding: 6px;
-      transition: transform 0.2s, filter 0.2s;
-      z-index: 10;
-    }
-    .vuln-spot:not(.found):hover {
-      transform: scale(1.15);
-      filter: drop-shadow(0 0 10px rgba(255,215,0,0.8));
-    }
-    .vuln-spot.found {
-      cursor: default;
-      filter: drop-shadow(0 0 12px rgba(244,67,54,0.9));
-    }
-
-    .vuln-icon { font-size: 2.2em; display: block; line-height: 1; }
-
-    .vuln-tag {
-      position: absolute;
-      bottom: 110%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--red);
-      color: white;
-      padding: 4px 10px;
-      border-radius: 8px;
-      font-size: 0.65em;
-      white-space: nowrap;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.25s;
-      font-weight: bold;
-    }
-    .vuln-spot.found .vuln-tag { opacity: 1; }
-
-    /* Pulsing ring on unfound spots */
-    .vuln-spot:not(.found)::after {
-      content: '';
-      position: absolute;
-      inset: -4px;
-      border-radius: 50%;
-      border: 2px solid var(--gold);
-      animation: pulseRing 2s infinite;
-    }
-
-    /* ============================================================
-       GAME — SCROLL (PHISHING)
-    ============================================================ */
-    .scroll-visual {
-      background: linear-gradient(135deg, #f5e6c8, #e8d5a3);
-      color: #2a1a00;
-      border-radius: 14px;
-      padding: 1em 1.6em;
-      margin: 0.5em auto;
-      max-width: 520px;
-      border: 3px solid #8B4513;
-      box-shadow: 0 6px 24px rgba(139,69,19,0.4);
-      font-family: Georgia, serif;
-      font-size: 1.05em;
-      line-height: 1.6;
-      position: relative;
-    }
-    .scroll-visual .scroll-cap {
-      position: absolute;
-      font-size: 2em;
-      top: -0.45em;
-    }
-    .scroll-visual .scroll-cap.left  { left: 0.2em; }
-    .scroll-visual .scroll-cap.right { right: 0.2em; }
-    .scroll-flag { color: #cc0000; font-weight: bold; }
-
-    /* ============================================================
-       GAME — STORY BOX
-    ============================================================ */
-    .story-box {
-      background: rgba(50,50,100,0.5);
-      border: 2px solid rgba(121,134,203,0.5);
-      border-radius: 14px;
-      padding: 0.8em 1.4em;
-      margin: 0.5em auto;
-      max-width: 580px;
-      font-size: 1.05em;
-      color: #ddd;
-      font-style: italic;
-      line-height: 1.6;
-    }
-
-    /* ============================================================
-       GAME — VICTORY
-    ============================================================ */
-    .victory-badge {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #FFD700, #FFA500);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4em;
-      margin: 0 auto 0.3em;
-      box-shadow: 0 0 50px rgba(255,165,0,0.6);
-      animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-    }
-
-    .victory-message {
-      font-size: 1.1em;
-      color: #ddd;
-      max-width: 600px;
-      margin: 0.5em auto;
-      line-height: 1.6;
-    }
-
-    /* ============================================================
-       CONFETTI
-    ============================================================ */
-    #confetti-container {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      pointer-events: none;
-      z-index: 9999;
-      overflow: hidden;
-    }
-
-    .confetti-piece {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      border-radius: 2px;
-      top: -20px;
-      animation: confettiFall linear forwards;
-    }
-
-    /* ============================================================
-       ANIMATIONS
-    ============================================================ */
-    @keyframes floatIn {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes wobble {
-      0%,100% { transform: translateX(0); }
-      25%      { transform: translateX(-12px); }
-      75%      { transform: translateX(12px); }
-    }
-
-    @keyframes pulseRing {
-      0%   { opacity: 0.8; transform: scale(1); }
-      70%  { opacity: 0;   transform: scale(1.6); }
-      100% { opacity: 0;   transform: scale(1.6); }
-    }
-
-    @keyframes pulseDot {
-      0%,100% { box-shadow: 0 0 0 0 rgba(255,215,0,0.5); }
-      50%      { box-shadow: 0 0 0 6px rgba(255,215,0,0); }
-    }
-
-    @keyframes popIn {
-      from { transform: scale(0) rotate(-180deg); opacity: 0; }
-      80%  { transform: scale(1.15) rotate(8deg); }
-      to   { transform: scale(1) rotate(0deg); opacity: 1; }
-    }
-
-    @keyframes confettiFall {
-      from { top: -20px; opacity: 1;   transform: rotate(0deg)   translateX(0); }
-      to   { top: 105vh; opacity: 0.4; transform: rotate(720deg) translateX(var(--drift)); }
-    }
-  </style>
+  <!-- Presentation styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ================================================================
-     REVEAL.JS PRESENTATION
-================================================================ -->
 <div class="reveal">
   <div class="slides">
 
@@ -679,11 +27,11 @@
          SLIDE 1: TITLE
     ============================================================ -->
     <section>
-      <span class="emoji-xl">🏰</span>
+      <div style="font-size:4.5em; line-height:1; margin-bottom:0.1em;">🏰</div>
       <h1>Career Day!</h1>
       <p class="title-tagline">⚔️ Cybersecurity Superhero ⚔️</p>
-      <div class="tenable-wordmark" style="margin-top:0.8em;">TENABLE</div>
-      <p style="color:#888; font-size:1em; margin-top:0.6em;">Welcome, Belvedere 2nd Graders! 👋&nbsp;&nbsp;Press → to begin</p>
+      <div class="tenable-wordmark">TENABLE</div>
+      <p style="color:#446; font-size:0.95em; margin-top:0.5em;">Welcome, students! 👋 &nbsp; Press → to begin</p>
     </section>
 
     <!-- ============================================================
@@ -706,8 +54,12 @@
     ============================================================ -->
     <section>
       <h2>🏢 Where I Work</h2>
-      <div class="tenable-wordmark" style="font-size:1.6em; margin:0.1em 0;">TENABLE</div>
-      <p style="color:#aaa; font-style:italic; font-size:0.95em; margin:0 0 0.6em;">"The Exposure Management Company"</p>
+      <img
+        class="tenable-logo-img"
+        src="https://static.tenable.com/press/logos/TenableLogo_White_RGB.png"
+        alt="Tenable"
+      >
+      <p class="tenable-tagline">"The Exposure Management Company"</p>
       <div class="stats-grid">
         <div class="stat-card">
           <span class="stat-number">40,000+</span>
@@ -723,7 +75,7 @@
         </div>
         <div class="stat-card">
           <span class="stat-number">$1 Billion</span>
-          in revenue — protecting computers is big work!
+          in annual revenue
         </div>
       </div>
     </section>
@@ -733,23 +85,28 @@
     ============================================================ -->
     <section>
       <h2>🗺️ How I Got This Job</h2>
-      <ul class="timeline">
-        <li data-icon="⭐">
-          I always liked computers — I first started making webpages just like this one!
-        </li>
-        <li data-icon="🎒">
-          In school I got into Digital Media: web design, graphic design, audio &amp; video production
-        </li>
-        <li data-icon="🎓">
-          I went to college to study Multimedia — anything where I could create things
-        </li>
-        <li data-icon="💼">
-          In 2012 I joined Tenable's Marketing team to redesign their logo &amp; website
-        </li>
-        <li data-icon="⚔️">
-          Now I manage 20 people in IT, helping our customers &amp; employees every day!
-        </li>
-      </ul>
+      <div class="steps-row">
+        <div class="step-item">
+          <div class="step-icon">⭐</div>
+          <div class="step-text">Always loved computers — started making webpages just like this one!</div>
+        </div>
+        <div class="step-item">
+          <div class="step-icon">🎨</div>
+          <div class="step-text">Got into Digital Media: web design, graphic design, audio &amp; video</div>
+        </div>
+        <div class="step-item">
+          <div class="step-icon">🎓</div>
+          <div class="step-text">Studied Multimedia in college — anything where I could create things</div>
+        </div>
+        <div class="step-item">
+          <div class="step-icon">💼</div>
+          <div class="step-text">Joined Tenable Marketing in 2012 to redesign their logo &amp; website</div>
+        </div>
+        <div class="step-item">
+          <div class="step-icon">⚔️</div>
+          <div class="step-text">Now I manage 20 people in IT helping our customers &amp; employees every day!</div>
+        </div>
+      </div>
       <div class="tip-box">💡 Every expert was once a beginner. Your curiosity today builds your superpower tomorrow!</div>
     </section>
 
@@ -758,543 +115,121 @@
     ============================================================ -->
     <section>
       <h2>🎓 Where I Went to School</h2>
-      <div class="school-card">
-        <span class="school-icon">🏫</span>
-        <div>
-          <div class="school-name">Loyola University Maryland</div>
-          <div class="school-detail">
-            BA in Communication
+      <div class="school-row">
+        <div class="school-card">
+          <span class="school-icon">🏫</span>
+          <div>
+            <div class="school-name">Loyola University Maryland</div>
+            <div class="school-detail">BA in Communication</div>
+          </div>
+        </div>
+        <div class="school-card">
+          <span class="school-icon">🏛️</span>
+          <div>
+            <div class="school-name">Fordham University</div>
+            <div class="school-detail">MA in Public Communications</div>
           </div>
         </div>
       </div>
-      <div class="school-card">
-        <span class="school-icon">🏛️</span>
-        <div>
-          <div class="school-name">Fordham University</div>
-          <div class="school-detail">
-            MA in Public Communications
-          </div>
-        </div>
-      </div>
-      <p style="margin-top:0.7em; font-size:1.05em; color:#bbb;">
+      <p style="margin-top:0.9em; font-size:1.1em; color:#6688aa;">
         📚 School teaches you <em>how to think and solve problems</em> — that's the real superpower!
       </p>
     </section>
 
     <!-- ============================================================
-         SLIDE 6: WHAT TENABLE DOES
+         SLIDE 6: WHAT TENABLE DOES — CASTLE INSPECTOR
     ============================================================ -->
     <section>
       <h2>🛡️ What Does Tenable Do?</h2>
-      <div class="analogy-grid">
-        <div class="analogy-card">
-          <span class="analogy-icon">🏰</span>
-          <strong>Castle Inspector</strong>
-          <br><br>
-          Imagine a giant castle holding everyone's photos, messages, and secrets.
-          Tenable walks around <em>every single day</em> checking every stone,
-          window, and door for tiny cracks — before any bad guys sneak in!
-        </div>
-        <div class="analogy-card">
-          <span class="analogy-icon">🩺</span>
-          <strong>Doctor for Computers</strong>
-          <br><br>
-          Just like you visit the doctor for a check-up, Tenable gives computers
-          a check-up! We look in every corner for problems before they get "sick."
-          Then we help fix everything fast.
+      <div class="analogy-slide">
+        <div class="analogy-icon-big">🏰</div>
+        <div class="analogy-body">
+          <h3 style="color:var(--cyan); margin:0 0 0.4em;">The Castle Inspector</h3>
+          <p>
+            Imagine a giant castle holding <strong>everyone's most important treasures</strong> — photos, messages, homework.<br><br>
+            My job is to walk around the entire castle every day, checking every stone, every window, every door for tiny cracks.<br><br>
+            When I find one, I tell the builders so they can <strong>fix it before any bad guys sneak in</strong>.
+            <em>That's exactly what Tenable does — but for computers!</em>
+          </p>
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-         SLIDE 7: WOW FACTS
+         SLIDE 7: WHAT TENABLE DOES — DOCTOR FOR COMPUTERS
     ============================================================ -->
     <section>
-      <h2>🤯 Wow Facts!</h2>
-      <div class="fact-card">⚡ A cyberattack happens somewhere in the world every <strong>39 seconds</strong> — faster than you can tie your shoes!</div>
-      <div class="fact-card">🦠 <strong>560,000</strong> new "computer germs" (malware) are discovered <em>every single day</em></div>
-      <div class="fact-card">🦋 The first computer virus (1971) was called <strong>"Creeper"</strong>. It popped up and said: <em>"I'm the creeper — catch me if you can!"</em></div>
-      <div class="fact-card">🧑‍💻 The most popular password in the world is <strong>"123456"</strong> — can you believe it?!</div>
-      <div class="fact-card">🌍 There are <strong>3.5 million</strong> unfilled cybersecurity jobs worldwide. The world needs more superheroes — maybe that's <em>you</em>!</div>
+      <h2>🛡️ What Does Tenable Do?</h2>
+      <div class="analogy-slide">
+        <div class="analogy-icon-big">🩺</div>
+        <div class="analogy-body">
+          <h3 style="color:var(--cyan); margin:0 0 0.4em;">The Doctor for Computers</h3>
+          <p>
+            You know how you go to the doctor for a check-up? The doctor looks in your ears, checks your heartbeat, and makes sure <strong>everything is healthy</strong>.<br><br>
+            We do that for computers! We give them a full check-up to find problems <strong>before they get "sick."</strong><br><br>
+            Then we help the company fix everything — fast.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- ============================================================
-         SLIDE 8: THE GAME
+         SLIDE 8: WOW FACTS  (1 of 2)
+    ============================================================ -->
+    <section>
+      <h2>🤯 Wild Cybersecurity Facts!</h2>
+      <div class="facts-grid">
+        <div class="fact-card">
+          ⚡ A cyberattack happens somewhere in the world every <strong>39 seconds</strong> — faster than you can tie your shoes!
+        </div>
+        <div class="fact-card">
+          🦠 <strong>560,000</strong> new "computer germs" (malware) are discovered <em>every single day</em>
+        </div>
+        <div class="fact-card">
+          🦋 The first computer virus (1971) was called <strong>"Creeper"</strong>. It just popped up and said:<br>
+          <em>"I'm the creeper — catch me if you can!"</em>
+        </div>
+        <div class="fact-card">
+          🐛 The word "bug" in computers comes from a <strong>real moth</strong> that got stuck inside a computer back in 1947!
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SLIDE 9: WOW FACTS  (2 of 2)
+    ============================================================ -->
+    <section>
+      <h2>🤯 More Wild Facts!</h2>
+      <div class="facts-grid">
+        <div class="fact-card">
+          🔑 The most popular password in the entire world is <strong>"123456"</strong> — can you believe it?!
+        </div>
+        <div class="fact-card">
+          🧑‍💻 Tenable's most famous security tool was invented by a <strong>17-year-old teenager!</strong>
+        </div>
+        <div class="fact-card span2">
+          🌍 There are <strong>3.5 million</strong> unfilled cybersecurity jobs worldwide right now. The world desperately needs more people who protect computers —
+          <strong style="color:var(--cyan);">maybe that's YOU someday!</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SLIDE 10: THE GAME
     ============================================================ -->
     <section>
       <div id="game-container">
-        <p style="color:#666;">Initializing game…</p>
+        <p style="color:#334;">Loading game…</p>
       </div>
     </section>
 
   </div><!-- /.slides -->
 </div><!-- /.reveal -->
 
-<!-- Confetti layer (outside reveal so it overlays everything) -->
 <div id="confetti-container"></div>
 
-<!-- ================================================================
-     REVEAL.JS
-================================================================ -->
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
-<script>
-Reveal.initialize({
-  hash: false,
-  transition: 'slide',
-  backgroundTransition: 'fade',
-  controls: true,
-  progress: true,
-  center: true,
-  width: '100%',
-  height: '100%',
-  margin: 0.04,
-  minScale: 0.2,
-  maxScale: 2.0,
-});
-</script>
-
-<!-- ================================================================
-     GAME ENGINE
-================================================================ -->
-<script>
-/* ------------------------------------------------------------------
-   DATA
------------------------------------------------------------------- */
-const VULNS = [
-  {
-    id: 'password',
-    icon: '🔑',
-    tag: 'Weak Password "1234"!',
-    style: 'top:52%; left:48%;',
-    fact: 'The castle password was just "1234" — anyone could guess it!',
-  },
-  {
-    id: 'guard',
-    icon: '😴',
-    tag: 'Sleeping Guard!',
-    style: 'top:42%; left:14%;',
-    fact: 'The guard fell asleep! Nobody was watching the gate!',
-  },
-  {
-    id: 'window',
-    icon: '🪟',
-    tag: 'Open Window!',
-    style: 'top:22%; left:74%;',
-    fact: 'A window was left wide open — a sneaky thief could climb right in!',
-  },
-  {
-    id: 'bridge',
-    icon: '🚪',
-    tag: 'Drawbridge Down!',
-    style: 'top:76%; left:46%;',
-    fact: 'The drawbridge was never raised — anyone could just walk in!',
-  },
-];
-
-const CHOICE_SCENES = [
-  {
-    id: 'password',
-    heading: '🔐 Mission 2: Password Challenge!',
-    sub: 'The castle door needs a secret password. Which one is the strongest?',
-    choices: [
-      { text: 'A)  1234', correct: false,
-        why: '🚫 "1234" is the most guessed password in the entire world! Way too easy for a bad guy!' },
-      { text: 'B)  password', correct: false,
-        why: '🚫 "password" is the #2 most guessed password. Bad guys know this one too!' },
-      { text: 'C)  Dr4g0n$l@y3r!  🐉', correct: true,
-        why: '✅ Yes! Long passwords that mix LETTERS + numbers + symbols are super hard to crack. The longer, the better!' },
-    ],
-  },
-  {
-    id: 'phishing',
-    heading: '📜 Mission 3: Suspicious Scroll!',
-    sub: 'A mysterious scroll arrives at the castle gates…',
-    scroll: true,
-    scrollText: [
-      '🎉 YOU WON 1,000 GOLD COINS! 🎉',
-      'Click here RIGHT NOW before it expires!',
-      '⚡ URGENT — only 5 minutes left! ⚡',
-      'Enter your castle password to claim your prize!!!',
-    ],
-    choices: [
-      { text: 'A)  Click it! Free gold! 🤩', correct: false,
-        why: '🚫 Oh no — that was a TRICK! Bad guys send fake messages to fool people. This is called "phishing" (like fishing 🎣 — they\'re fishing for your secrets!).' },
-      { text: 'B)  Tell the castle wizard — it looks fishy! 🧙', correct: true,
-        why: '✅ Great thinking! When something seems too good to be true, it usually is. Always tell a trusted grown-up when something feels weird.' },
-      { text: 'C)  Open it and see what happens 👀', correct: false,
-        why: '🚫 Don\'t open unknown messages! Computer germs can sneak in just by being opened.' },
-    ],
-  },
-  {
-    id: 'sharing',
-    heading: '🤝 Mission 4: The Sharing Mistake!',
-    sub: 'Guard Benny needs a day off. Here\'s what he does…',
-    story: '"Hey friend! My secret password is CASTLE123. Use it to get in while I\'m gone today!" 😬',
-    choices: [
-      { text: 'A)  Sure! Friends can share passwords! 👍', correct: false,
-        why: '🚫 Nope! Even best friends shouldn\'t share passwords. If Benny\'s friend tells just one more person, now everyone knows. Secrets spread fast!' },
-      { text: 'B)  No! Passwords are secret — even from friends. 🤐', correct: true,
-        why: '✅ Exactly! Think of a password like a toothbrush — you NEVER share it with anyone. The castle wizard should create a temporary pass instead.' },
-    ],
-  },
-];
-
-/* ------------------------------------------------------------------
-   STATE
------------------------------------------------------------------- */
-const state = {
-  scene: 'intro',   // 'intro' | 'castle' | 'password' | 'phishing' | 'sharing' | 'victory'
-  foundVulns: new Set(),
-  choiceMade: false,
-  feedbackHtml: '',
-};
-
-const SCENE_ORDER = ['intro', 'castle', 'password', 'phishing', 'sharing', 'victory'];
-
-/* ------------------------------------------------------------------
-   RENDER DISPATCHER
------------------------------------------------------------------- */
-function renderGame() {
-  const container = document.getElementById('game-container');
-  if (!container) return;
-
-  switch (state.scene) {
-    case 'intro':    container.innerHTML = renderIntro();    break;
-    case 'castle':   container.innerHTML = renderCastle();   break;
-    case 'password':
-    case 'phishing':
-    case 'sharing':  container.innerHTML = renderChoiceScene(); break;
-    case 'victory':  container.innerHTML = renderVictory(); launchConfetti(); break;
-  }
-}
-
-/* ------------------------------------------------------------------
-   INTRO
------------------------------------------------------------------- */
-function renderIntro() {
-  return `
-    <div class="float-in" style="text-align:center;">
-      <div class="intro-badge">🏰</div>
-      <div class="game-heading" style="font-size:2em;">Castle Security Adventure!</div>
-      <div class="game-subheading" style="font-size:1.15em; margin:0.4em auto 1em;">
-        You are <strong style="color:var(--gold);">Tenable's newest Security Inspector!</strong><br>
-        Your mission: find every weakness before the bad guys do. 🕵️
-      </div>
-      <button class="game-btn" onclick="startGame()">⚔️ Start Investigating!</button>
-    </div>
-  `;
-}
-
-function startGame() {
-  state.scene = 'castle';
-  renderGame();
-}
-
-/* ------------------------------------------------------------------
-   CASTLE SCENE
------------------------------------------------------------------- */
-function renderCastle() {
-  const allFound = state.foundVulns.size === VULNS.length;
-
-  // Build star field (deterministic positions)
-  const stars = Array.from({length: 18}, (_, i) => {
-    const size = (i % 3 === 0) ? 3 : (i % 3 === 1) ? 2 : 1.5;
-    const top  = 5 + (i * 97 % 50);
-    const left = 3 + (i * 137 % 94);
-    return `<div class="star" style="width:${size}px;height:${size}px;top:${top}%;left:${left}%;"></div>`;
-  }).join('');
-
-  // Vulnerability spots
-  const spots = VULNS.map(v => {
-    const found = state.foundVulns.has(v.id);
-    return `
-      <div class="vuln-spot ${found ? 'found' : ''}"
-           style="position:absolute; ${v.style} transform:translate(-50%,-50%);"
-           ${found ? '' : `onclick="findVuln('${v.id}')"`}>
-        <span class="vuln-tag">${v.tag}</span>
-        <span class="vuln-icon">${v.icon}</span>
-      </div>
-    `;
-  }).join('');
-
-  return `
-    <div class="castle-scene-wrapper float-in">
-      ${renderProgressDots('castle')}
-      <div class="game-heading">🏰 Mission 1: Spot the Vulnerabilities!</div>
-      <div class="game-subheading">Can you find all 4 security problems? Click each one you spot!</div>
-      <div class="vuln-counter">🔍 Found: ${state.foundVulns.size} / ${VULNS.length}</div>
-
-      <!-- Castle visual -->
-      <div class="castle-visual">
-
-        <!-- Stars -->
-        <div class="star-field">${stars}</div>
-
-        <!-- CSS castle (non-interactive backdrop) -->
-        <div class="castle-bg" style="width:560px; height:200px;">
-
-          <!-- Left tower -->
-          <div class="c-tower" style="height:160px;">
-            <div class="battlements">
-              <div class="battlement"></div>
-              <div class="battlement"></div>
-              <div class="battlement"></div>
-            </div>
-          </div>
-
-          <!-- Left wall section -->
-          <div class="c-wall" style="width:130px; height:100px;"></div>
-
-          <!-- Central keep -->
-          <div class="c-tower" style="width:120px; height:130px;">
-            <div class="battlements">
-              <div class="battlement"></div>
-              <div class="battlement"></div>
-              <div class="battlement"></div>
-              <div class="battlement"></div>
-              <div class="battlement"></div>
-            </div>
-            <div class="c-gate"></div>
-          </div>
-
-          <!-- Right wall section -->
-          <div class="c-wall" style="width:130px; height:100px;"></div>
-
-          <!-- Right tower -->
-          <div class="c-tower" style="height:160px;">
-            <div class="battlements">
-              <div class="battlement"></div>
-              <div class="battlement"></div>
-              <div class="battlement"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Clickable vuln spots (overlaid) -->
-        ${spots}
-      </div><!-- /.castle-visual -->
-
-      ${allFound ? `
-        <div class="feedback-box float-in" style="border-color:var(--green); margin-top:0.7em;">
-          🎉 <strong>Amazing work!</strong> You found all 4 vulnerabilities — exactly what Tenable does for 40,000+ companies!<br>
-          These weak spots are called <strong style="color:var(--gold);">VULNERABILITIES</strong>.
-        </div>
-        <button class="game-btn" onclick="advanceScene()" style="margin-top:0.4em;">Next Mission ➡️</button>
-      ` : `
-        <p style="font-size:0.9em; color:#666; margin-top:0.5em;">
-          💡 Hint: look for sleepy guards, open windows, weak passwords, and unlocked doors!
-        </p>
-      `}
-    </div>
-  `;
-}
-
-function findVuln(id) {
-  state.foundVulns.add(id);
-  renderGame();
-}
-
-/* ------------------------------------------------------------------
-   CHOICE SCENES
------------------------------------------------------------------- */
-function getChoiceData() {
-  return CHOICE_SCENES.find(s => s.id === state.scene);
-}
-
-function renderChoiceScene() {
-  const data   = getChoiceData();
-  const locked = state.choiceMade;
-
-  let extra = '';
-  if (data.scroll) {
-    extra = `
-      <div class="scroll-visual">
-        <span class="scroll-cap left">📜</span>
-        <span class="scroll-cap right">📜</span>
-        ${data.scrollText.map((line, i) =>
-          i === 0 || i === data.scrollText.length - 1
-            ? `<div class="scroll-flag">${line}</div>`
-            : `<div>${line}</div>`
-        ).join('')}
-      </div>
-    `;
-  } else if (data.story) {
-    extra = `<div class="story-box">"${data.story}"</div>`;
-  }
-
-  const choiceButtons = data.choices.map((c, i) => {
-    let cls = 'choice-btn';
-    if (locked) {
-      cls += ' locked';
-      if (c.correct) cls += ' correct';
-    }
-    return `
-      <button class="${cls}" ${locked ? '' : `onclick="handleChoice(${i})"`}>
-        ${c.text}
-      </button>
-    `;
-  }).join('');
-
-  const sceneIndex = SCENE_ORDER.indexOf(state.scene) - 1; // 1-based mission #
-
-  return `
-    <div class="float-in" style="text-align:center; width:100%; max-width:680px; margin:0 auto;">
-      ${renderProgressDots(state.scene)}
-      <div class="game-heading">${data.heading}</div>
-      <div class="game-subheading">${data.sub}</div>
-      ${extra}
-      <div style="margin:0.5em 0;">${choiceButtons}</div>
-      ${locked && state.feedbackHtml ? `
-        <div class="feedback-box float-in">${state.feedbackHtml}</div>
-        <button class="game-btn" onclick="advanceScene()" style="margin-top:0.4em;">
-          ${state.scene === 'sharing' ? '🏆 See Results!' : 'Next Mission ➡️'}
-        </button>
-      ` : ''}
-    </div>
-  `;
-}
-
-function handleChoice(idx) {
-  if (state.choiceMade) return;
-  const data   = getChoiceData();
-  const choice = data.choices[idx];
-
-  state.choiceMade  = true;
-  state.feedbackHtml = choice.why;
-  renderGame();
-
-  // Apply correct/wrong class to the clicked button after render
-  requestAnimationFrame(() => {
-    const btns = document.querySelectorAll('.choice-btn');
-    if (btns[idx]) btns[idx].classList.add(choice.correct ? 'correct' : 'wrong');
-  });
-}
-
-/* ------------------------------------------------------------------
-   SCENE NAVIGATION
------------------------------------------------------------------- */
-function advanceScene() {
-  const idx = SCENE_ORDER.indexOf(state.scene);
-  state.scene      = SCENE_ORDER[idx + 1] || 'victory';
-  state.choiceMade  = false;
-  state.feedbackHtml = '';
-  renderGame();
-}
-
-/* ------------------------------------------------------------------
-   PROGRESS DOTS
------------------------------------------------------------------- */
-function renderProgressDots(current) {
-  const missions = ['castle', 'password', 'phishing', 'sharing'];
-  const dots = missions.map(m => {
-    const done   = SCENE_ORDER.indexOf(current) > SCENE_ORDER.indexOf(m);
-    const active = current === m;
-    return `<div class="progress-dot ${done ? 'done' : active ? 'active' : ''}"></div>`;
-  }).join('');
-  return `<div class="game-progress">${dots}</div>`;
-}
-
-/* ------------------------------------------------------------------
-   VICTORY
------------------------------------------------------------------- */
-function renderVictory() {
-  return `
-    <div class="float-in" style="text-align:center;">
-      <div class="victory-badge">🛡️</div>
-      <div class="game-heading" style="font-size:2.2em; margin:0.1em 0;">YOU DID IT!</div>
-      <div class="game-heading" style="font-size:1.3em; color:#fff; font-weight:normal;">
-        Official Digital Security Superhero! ⚔️🎉
-      </div>
-      <div style="font-size:2.2em; margin:0.3em 0;">🏰 🛡️ ⚔️ 🌟</div>
-      <div class="victory-message">
-        <strong>Just like you</strong>, Tenable's Security Inspectors find vulnerabilities,
-        spot phishing tricks, and protect passwords — for
-        <strong style="color:var(--gold);">40,000+ organizations</strong> around the world every single day!
-      </div>
-      <p style="font-size:0.95em; color:#888; margin-top:0.5em;">
-        The world needs more cybersecurity superheroes. Maybe that's <strong style="color:var(--gold);">YOU</strong> someday! 🚀
-      </p>
-      <button class="game-btn secondary" onclick="restartGame()" style="margin-top:0.5em;">
-        🔄 Play Again
-      </button>
-    </div>
-  `;
-}
-
-function restartGame() {
-  state.scene        = 'intro';
-  state.foundVulns   = new Set();
-  state.choiceMade   = false;
-  state.feedbackHtml = '';
-  document.getElementById('confetti-container').innerHTML = '';
-  renderGame();
-}
-
-/* ------------------------------------------------------------------
-   CONFETTI
------------------------------------------------------------------- */
-function launchConfetti() {
-  const container = document.getElementById('confetti-container');
-  container.innerHTML = '';
-  const colors = ['#FFD700','#FFA500','#ff6b6b','#4fc3f7','#81c784','#ce93d8','#fff'];
-
-  for (let i = 0; i < 70; i++) {
-    const el       = document.createElement('div');
-    el.className   = 'confetti-piece';
-    const color    = colors[i % colors.length];
-    const left     = Math.random() * 100;
-    const drift    = (Math.random() - 0.5) * 220;
-    const duration = 2.2 + Math.random() * 2;
-    const delay    = Math.random() * 1.8;
-    const size     = 8 + Math.random() * 10;
-    const round    = Math.random() > 0.5;
-
-    el.style.cssText = `
-      left: ${left}%;
-      width: ${size}px; height: ${size}px;
-      background: ${color};
-      --drift: ${drift}px;
-      animation-duration: ${duration}s;
-      animation-delay: ${delay}s;
-      border-radius: ${round ? '50%' : '2px'};
-    `;
-    container.appendChild(el);
-  }
-
-  setTimeout(() => { container.innerHTML = ''; }, 6000);
-}
-
-/* ------------------------------------------------------------------
-   KEYBOARD INTERCEPT — prevent slide navigation during game
------------------------------------------------------------------- */
-document.addEventListener('keydown', e => {
-  const slide = Reveal.getCurrentSlide && Reveal.getCurrentSlide();
-  if (!slide) return;
-  const inGame = !!slide.querySelector('#game-container');
-  if (inGame && state.scene !== 'intro' && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
-    e.stopImmediatePropagation();
-  }
-}, true);
-
-/* ------------------------------------------------------------------
-   INIT — render game when its slide becomes active
------------------------------------------------------------------- */
-Reveal.on('slidechanged', event => {
-  if (event.currentSlide.querySelector('#game-container')) {
-    renderGame();
-  }
-});
-
-// Also render if the page loads directly on the game slide
-document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => {
-    const slide = Reveal.getCurrentSlide && Reveal.getCurrentSlide();
-    if (slide && slide.querySelector('#game-container')) {
-      renderGame();
-    }
-  }, 300);
-});
-</script>
+<script src="scripts.js"></script>
 
 </body>
 </html>
