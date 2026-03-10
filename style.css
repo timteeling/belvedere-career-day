@@ -1,49 +1,51 @@
 /* ============================================================
-   VARIABLES & GLOBAL
+   BRAND PALETTE + REVEAL.JS THEME OVERRIDES
+   --r-* variables are read natively by Reveal.js 4+.
+   Setting them here replaces the night.css defaults cleanly
+   with no !important or cascade fights needed.
 ============================================================ */
 :root {
+  /* Brand tokens */
   --cyan:  #00f0ff;
   --cyan2: #0099cc;
   --green: #00e676;
   --red:   #f44336;
-  --bg:    #041e42;
+
+  /* Reveal.js theme layer */
+  --r-background-color:       #041e42;
+  --r-main-font:              'Instrument Sans', sans-serif;
+  --r-heading-font:           'Instrument Sans', sans-serif;
+  --r-main-font-size:         36px;
+  --r-main-color:             #ccd6e0;
+  --r-heading-color:          #00f0ff;
+  --r-heading-font-weight:    800;
+  --r-heading-text-transform: none;
+  --r-heading-line-height:    1.15;
+  --r-heading-letter-spacing: -0.01em;
+  --r-heading1-size:          2.0em;
+  --r-heading2-size:          1.5em;
+  --r-heading3-size:          1.05em;
+  --r-heading1-text-shadow:   0 0 40px rgba(0, 240, 255, 0.35);
+  --r-block-margin:           12px;
+  --r-link-color:             #00f0ff;
+  --r-link-color-hover:       #66f8ff;
 }
 
-body,
-.reveal-viewport { background: var(--bg); }
-
-.reveal .slide-background { background: var(--bg) !important; }
-
-.reveal {
-  font-family: 'Instrument Sans', sans-serif;
-}
-
+/* ============================================================
+   GLOBAL LAYOUT
+============================================================ */
 .reveal .slides section {
   text-align: center;
   box-sizing: border-box;
   padding: 18px 44px;
 }
 
-.reveal h1 {
-  font-size: 2.0em;
-  font-weight: 800;
-  color: var(--cyan);
-  text-shadow: 0 0 40px rgba(0, 240, 255, 0.35);
-  margin-bottom: 0.15em;
-  letter-spacing: -0.01em;
-}
+/* Fine-tune p/li below the 36px base */
+.reveal p  { line-height: 1.55; }
+.reveal li { line-height: 1.7; list-style: none; }
 
-.reveal h2 {
-  font-size: 1.5em;
-  font-weight: 800;
-  color: var(--cyan);
-  margin-bottom: 0.25em;
-  letter-spacing: -0.01em;
-}
-
-.reveal h3 { font-size: 1.05em; font-weight: 700; color: #dde; }
-.reveal p  { font-size: 0.95em; line-height: 1.55; }
-.reveal li { font-size: 0.95em; line-height: 1.7;  list-style: none; }
+/* h2 margin tighter than the default block-margin */
+.reveal h2 { margin-bottom: 0.25em; }
 
 .float-in { animation: floatIn 0.4s ease-out both; }
 
@@ -97,10 +99,7 @@ body,
 
 .profile-facts { text-align: left; }
 
-.profile-facts p {
-  margin: 0.35em 0;
-  font-size: 1.05em;
-}
+.profile-facts p { margin: 0.35em 0; }
 
 /* ============================================================
    SLIDE 3 — WHERE I WORK
@@ -113,11 +112,12 @@ body,
   filter: drop-shadow(0 0 10px rgba(0,240,255,0.2));
 }
 
-.tenable-tagline {
+/* Higher specificity beats .reveal p without !important */
+.reveal .tenable-tagline {
   color: #6688aa;
   font-style: italic;
-  font-size: 0.85em !important;
-  margin: 0 0 0.5em !important;
+  font-size: 0.85em;
+  margin: 0 0 0.5em;
 }
 
 .stats-grid {
@@ -147,7 +147,7 @@ body,
 }
 
 /* ============================================================
-   SLIDE 4 — HOW I GOT HERE  (horizontal steps)
+   SLIDE 4 — HOW I GOT HERE
 ============================================================ */
 .steps-row {
   display: flex;
@@ -370,7 +370,7 @@ body,
   transition: transform 0.15s, box-shadow 0.15s;
   margin: 0.25em;
   box-shadow: 0 4px 18px rgba(0,240,255,0.28);
-  font-family: 'Instrument Sans', sans-serif;
+  font-family: var(--r-main-font);
 }
 .game-btn:hover { transform: scale(1.05); box-shadow: 0 6px 24px rgba(0,240,255,0.5); }
 .game-btn.secondary {
@@ -395,7 +395,7 @@ body,
   cursor: pointer;
   text-align: left;
   transition: background 0.18s, border-color 0.18s, transform 0.1s;
-  font-family: 'Instrument Sans', sans-serif;
+  font-family: var(--r-main-font);
 }
 .choice-btn:hover:not(.locked) { background: rgba(0,240,255,0.1); border-color: var(--cyan); transform: translateX(5px); }
 .choice-btn.correct { background: rgba(0,230,118,0.16); border-color: var(--green) !important; color: #fff; }
@@ -546,7 +546,7 @@ body,
   opacity: 0;
   transition: opacity 0.25s;
   font-weight: 700;
-  font-family: 'Instrument Sans', sans-serif;
+  font-family: var(--r-main-font);
 }
 .vuln-spot.found .vuln-tag { opacity: 1; }
 
@@ -571,7 +571,7 @@ body,
   max-width: 460px;
   border: 3px solid #8B4513;
   box-shadow: 0 6px 20px rgba(139,69,19,0.35);
-  font-family: Georgia, serif;
+  font-family: Georgia, serif; /* Intentional parchment look */
   font-size: 0.9em;
   line-height: 1.5;
   position: relative;
