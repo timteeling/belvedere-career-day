@@ -15,35 +15,35 @@ body,
 .reveal .slide-background { background: var(--bg) !important; }
 
 .reveal {
-  font-family: 'Instrument Sans', 'Segoe UI', sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
 }
 
 .reveal .slides section {
   text-align: center;
   box-sizing: border-box;
-  padding: 28px 52px;
+  padding: 18px 44px;
 }
 
 .reveal h1 {
-  font-size: 2.6em;
+  font-size: 2.0em;
   font-weight: 800;
   color: var(--cyan);
   text-shadow: 0 0 40px rgba(0, 240, 255, 0.35);
-  margin-bottom: 0.2em;
+  margin-bottom: 0.15em;
   letter-spacing: -0.01em;
 }
 
 .reveal h2 {
-  font-size: 1.9em;
+  font-size: 1.5em;
   font-weight: 800;
   color: var(--cyan);
-  margin-bottom: 0.35em;
+  margin-bottom: 0.25em;
   letter-spacing: -0.01em;
 }
 
-.reveal h3 { font-size: 1.4em; font-weight: 600; color: #dde; }
-.reveal p  { font-size: 1.15em; line-height: 1.6; }
-.reveal li { font-size: 1.1em;  line-height: 1.8; list-style: none; }
+.reveal h3 { font-size: 1.05em; font-weight: 700; color: #dde; }
+.reveal p  { font-size: 0.95em; line-height: 1.55; }
+.reveal li { font-size: 0.95em; line-height: 1.7;  list-style: none; }
 
 .float-in { animation: floatIn 0.4s ease-out both; }
 
@@ -54,20 +54,20 @@ body,
   display: inline-block;
   background: linear-gradient(135deg, var(--cyan), var(--cyan2));
   color: #041e42;
-  padding: 0.3em 1.4em;
+  padding: 0.25em 1.2em;
   border-radius: 40px;
-  font-size: 1.25em;
+  font-size: 1.05em;
   font-weight: 800;
-  margin-top: 0.4em;
+  margin-top: 0.3em;
 }
 
 .tenable-wordmark {
-  font-size: 2.2em;
+  font-size: 1.8em;
   font-weight: 800;
   letter-spacing: 8px;
   text-transform: uppercase;
   color: var(--cyan);
-  margin: 0.4em 0 0.15em;
+  margin: 0.3em 0 0.1em;
 }
 
 /* ============================================================
@@ -77,53 +77,53 @@ body,
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 48px;
-  margin-top: 0.5em;
+  gap: 40px;
+  margin-top: 0.4em;
 }
 
 .profile-avatar {
-  width: 160px;
-  height: 160px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   background: linear-gradient(135deg, rgba(0,240,255,0.15), rgba(0,240,255,0.04));
   border: 3px solid var(--cyan);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 5em;
+  font-size: 3.8em;
   flex-shrink: 0;
-  box-shadow: 0 0 40px rgba(0,240,255,0.18);
+  box-shadow: 0 0 30px rgba(0,240,255,0.18);
 }
 
 .profile-facts { text-align: left; }
 
 .profile-facts p {
-  margin: 0.45em 0;
-  font-size: 1.2em;
+  margin: 0.35em 0;
+  font-size: 1.05em;
 }
 
 /* ============================================================
    SLIDE 3 — WHERE I WORK
 ============================================================ */
 .tenable-logo-img {
-  max-height: 64px;
+  max-height: 52px;
   width: auto;
   display: block;
-  margin: 0 auto 0.2em;
-  filter: drop-shadow(0 0 12px rgba(0,240,255,0.2));
+  margin: 0 auto 0.15em;
+  filter: drop-shadow(0 0 10px rgba(0,240,255,0.2));
 }
 
 .tenable-tagline {
   color: #6688aa;
   font-style: italic;
-  font-size: 1em !important;
-  margin: 0 0 0.6em !important;
+  font-size: 0.85em !important;
+  margin: 0 0 0.5em !important;
 }
 
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
+  gap: 12px;
   margin: 0 auto;
   max-width: 1100px;
 }
@@ -131,19 +131,19 @@ body,
 .stat-card {
   background: rgba(0,240,255,0.06);
   border: 2px solid rgba(0,240,255,0.3);
-  border-radius: 14px;
-  padding: 18px 12px;
-  font-size: 0.95em;
+  border-radius: 12px;
+  padding: 14px 10px;
+  font-size: 0.82em;
   color: #99bbcc;
 }
 
 .stat-number {
   display: block;
-  font-size: 2.2em;
+  font-size: 1.9em;
   font-weight: 800;
   color: var(--cyan);
   line-height: 1.1;
-  margin-bottom: 0.15em;
+  margin-bottom: 0.12em;
 }
 
 /* ============================================================
@@ -153,7 +153,7 @@ body,
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  margin: 0.6em auto 0;
+  margin: 0.5em auto 0;
   max-width: 1140px;
 }
 
@@ -164,52 +164,51 @@ body,
   flex: 1;
   position: relative;
   text-align: center;
-  padding: 0 6px;
+  padding: 0 5px;
 }
 
-/* connecting line between steps */
 .step-item:not(:last-child)::after {
   content: '';
   position: absolute;
-  top: 1.15em;
-  left: calc(50% + 1.3em);
-  right: calc(-50% + 1.3em);
+  top: 1.0em;
+  left: calc(50% + 1.15em);
+  right: calc(-50% + 1.15em);
   height: 2px;
   background: linear-gradient(90deg, var(--cyan), var(--cyan2));
-  opacity: 0.45;
+  opacity: 0.4;
 }
 
 .step-icon {
-  width: 2.5em;
-  height: 2.5em;
+  width: 2.2em;
+  height: 2.2em;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--cyan), var(--cyan2));
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.3em;
+  font-size: 1.15em;
   position: relative;
   z-index: 1;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.4em;
   flex-shrink: 0;
-  box-shadow: 0 0 16px rgba(0,240,255,0.3);
+  box-shadow: 0 0 14px rgba(0,240,255,0.3);
 }
 
 .step-text {
-  font-size: 0.88em;
+  font-size: 0.78em;
   color: #99aacc;
-  line-height: 1.45;
+  line-height: 1.4;
 }
 
 .tip-box {
   background: rgba(0,240,255,0.05);
   border: 1px solid rgba(0,240,255,0.22);
   border-radius: 10px;
-  padding: 0.55em 1.2em;
-  margin: 0.9em auto 0;
-  font-size: 1em;
+  padding: 0.45em 1.1em;
+  margin: 0.7em auto 0;
+  font-size: 0.88em;
   color: var(--cyan);
-  max-width: 720px;
+  max-width: 700px;
 }
 
 /* ============================================================
@@ -217,62 +216,62 @@ body,
 ============================================================ */
 .school-row {
   display: flex;
-  gap: 24px;
+  gap: 20px;
   justify-content: center;
-  margin-top: 0.6em;
+  margin-top: 0.5em;
 }
 
 .school-card {
   background: rgba(0,153,204,0.09);
   border: 2px solid rgba(0,153,204,0.35);
-  border-radius: 16px;
-  padding: 22px 28px;
+  border-radius: 14px;
+  padding: 18px 22px;
   flex: 1;
-  max-width: 480px;
+  max-width: 460px;
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 14px;
   text-align: left;
 }
 
-.school-card .school-icon { font-size: 3em; flex-shrink: 0; }
+.school-card .school-icon { font-size: 2.4em; flex-shrink: 0; }
 
 .school-card .school-name {
-  font-size: 1.2em;
+  font-size: 1.05em;
   font-weight: 700;
   color: #fff;
 }
 
 .school-card .school-detail {
-  font-size: 0.95em;
+  font-size: 0.85em;
   color: #7799bb;
-  margin-top: 5px;
+  margin-top: 4px;
 }
 
 /* ============================================================
-   SLIDES 6 & 7 — WHAT TENABLE DOES (one analogy per slide)
+   SLIDES 6 & 7 — WHAT TENABLE DOES
 ============================================================ */
 .analogy-slide {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 52px;
-  margin-top: 0.5em;
+  gap: 44px;
+  margin-top: 0.4em;
   text-align: left;
 }
 
 .analogy-icon-big {
-  font-size: 7em;
+  font-size: 5.5em;
   line-height: 1;
   flex-shrink: 0;
 }
 
-.analogy-body { max-width: 640px; }
+.analogy-body { max-width: 620px; }
 
 .analogy-body p {
-  font-size: 1.2em;
+  font-size: 1.0em;
   color: #aabbd0;
-  line-height: 1.7;
+  line-height: 1.65;
   margin: 0;
 }
 
@@ -284,18 +283,18 @@ body,
 .facts-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  margin: 0.55em auto 0;
+  gap: 12px;
+  margin: 0.45em auto 0;
   max-width: 1060px;
 }
 
 .fact-card {
   background: rgba(0,240,255,0.04);
-  border-left: 5px solid var(--cyan);
-  border-radius: 0 12px 12px 0;
-  padding: 14px 20px;
+  border-left: 4px solid var(--cyan);
+  border-radius: 0 10px 10px 0;
+  padding: 12px 18px;
   text-align: left;
-  font-size: 1.05em;
+  font-size: 0.9em;
   color: #aabbd0;
   line-height: 1.5;
 }
@@ -303,16 +302,24 @@ body,
 .fact-card.span2 { grid-column: 1 / -1; }
 
 /* ============================================================
-   GAME — CONTAINER
+   GAME — SECTION & CONTAINER
 ============================================================ */
+.reveal .slides section.game-section {
+  padding: 0 !important;
+  height: 720px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #game-container {
   width: 100%;
-  height: 100%;
+  max-height: 700px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 8px;
+  padding: 10px 20px;
   box-sizing: border-box;
 }
 
@@ -322,13 +329,13 @@ body,
 .game-progress {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 0.55em;
+  gap: 8px;
+  margin-bottom: 0.4em;
 }
 
 .progress-dot {
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background: rgba(255,255,255,0.15);
   border: 2px solid rgba(255,255,255,0.3);
@@ -337,36 +344,35 @@ body,
 .progress-dot.active { background: var(--cyan);  border-color: var(--cyan); animation: pulseDot 1.2s infinite; }
 
 .game-heading {
-  font-size: 1.55em;
+  font-size: 1.3em;
   font-weight: 800;
   color: var(--cyan);
-  margin: 0 0 0.12em;
+  margin: 0 0 0.1em;
 }
 
 .game-subheading {
-  font-size: 1.0em;
+  font-size: 0.85em;
   color: #8899bb;
-  margin-bottom: 0.55em;
-  max-width: 620px;
-  line-height: 1.5;
+  margin-bottom: 0.4em;
+  max-width: 580px;
+  line-height: 1.45;
 }
 
-/* Primary CTA */
 .game-btn {
   background: linear-gradient(135deg, var(--cyan), var(--cyan2));
   color: #041e42;
   border: none;
-  padding: 0.55em 1.8em;
-  font-size: 1.2em;
+  padding: 0.45em 1.6em;
+  font-size: 1.0em;
   font-weight: 800;
   border-radius: 40px;
   cursor: pointer;
   transition: transform 0.15s, box-shadow 0.15s;
-  margin: 0.35em;
-  box-shadow: 0 4px 20px rgba(0,240,255,0.28);
-  font-family: inherit;
+  margin: 0.25em;
+  box-shadow: 0 4px 18px rgba(0,240,255,0.28);
+  font-family: 'Instrument Sans', sans-serif;
 }
-.game-btn:hover { transform: scale(1.05); box-shadow: 0 6px 26px rgba(0,240,255,0.5); }
+.game-btn:hover { transform: scale(1.05); box-shadow: 0 6px 24px rgba(0,240,255,0.5); }
 .game-btn.secondary {
   background: rgba(255,255,255,0.07);
   color: #aabbd0;
@@ -375,22 +381,21 @@ body,
 }
 .game-btn.secondary:hover { background: rgba(255,255,255,0.14); }
 
-/* Choice buttons */
 .choice-btn {
   display: block;
   width: 86%;
-  max-width: 580px;
-  margin: 0.3em auto;
+  max-width: 560px;
+  margin: 0.22em auto;
   background: rgba(255,255,255,0.05);
   border: 2px solid rgba(255,255,255,0.16);
   color: #dde;
-  padding: 0.6em 1.2em;
-  font-size: 1.1em;
-  border-radius: 12px;
+  padding: 0.5em 1.1em;
+  font-size: 0.92em;
+  border-radius: 10px;
   cursor: pointer;
   text-align: left;
   transition: background 0.18s, border-color 0.18s, transform 0.1s;
-  font-family: inherit;
+  font-family: 'Instrument Sans', sans-serif;
 }
 .choice-btn:hover:not(.locked) { background: rgba(0,240,255,0.1); border-color: var(--cyan); transform: translateX(5px); }
 .choice-btn.correct { background: rgba(0,230,118,0.16); border-color: var(--green) !important; color: #fff; }
@@ -400,30 +405,30 @@ body,
 .feedback-box {
   background: rgba(4,30,66,0.85);
   border: 2px solid var(--cyan);
-  border-radius: 12px;
-  padding: 0.8em 1.3em;
-  margin: 0.5em auto 0.35em;
-  max-width: 620px;
-  font-size: 1.0em;
+  border-radius: 10px;
+  padding: 0.6em 1.1em;
+  margin: 0.4em auto 0.25em;
+  max-width: 580px;
+  font-size: 0.88em;
   color: #dde;
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
 /* ============================================================
    GAME — INTRO
 ============================================================ */
 .intro-badge {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   background: linear-gradient(135deg, rgba(0,240,255,0.2), rgba(0,153,204,0.05));
   border: 3px solid var(--cyan);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3.8em;
-  margin: 0 auto 0.35em;
-  box-shadow: 0 0 40px rgba(0,240,255,0.2);
+  font-size: 3.0em;
+  margin: 0 auto 0.3em;
+  box-shadow: 0 0 36px rgba(0,240,255,0.2);
 }
 
 /* ============================================================
@@ -431,24 +436,24 @@ body,
 ============================================================ */
 .castle-scene-wrapper {
   width: 100%;
-  max-width: 900px;
+  max-width: 860px;
   margin: 0 auto;
 }
 
 .vuln-counter {
-  font-size: 1.1em;
+  font-size: 0.9em;
   color: var(--cyan);
-  margin-bottom: 0.4em;
+  margin-bottom: 0.3em;
   font-weight: 700;
 }
 
 .castle-visual {
   position: relative;
   background: linear-gradient(180deg, #020c1b 0%, #041e42 55%, #08200e 100%);
-  border-radius: 14px;
+  border-radius: 12px;
   border: 2px solid rgba(0,240,255,0.18);
   overflow: hidden;
-  height: 210px;
+  height: 185px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -466,7 +471,7 @@ body,
 }
 
 .c-tower {
-  width: 70px;
+  width: 60px;
   background: #0e2240;
   border-radius: 4px 4px 0 0;
   position: relative;
@@ -476,11 +481,11 @@ body,
 }
 .c-tower .battlements {
   display: flex;
-  gap: 5px;
+  gap: 4px;
   position: absolute;
-  top: -14px;
+  top: -12px;
 }
-.c-tower .battlement { width: 12px; height: 14px; background: #0e2240; border-radius: 2px 2px 0 0; }
+.c-tower .battlement { width: 10px; height: 12px; background: #0e2240; border-radius: 2px 2px 0 0; }
 
 .c-wall {
   background: #142d50;
@@ -491,8 +496,8 @@ body,
 }
 
 .c-gate {
-  width: 48px;
-  height: 60px;
+  width: 40px;
+  height: 52px;
   background: #020c1b;
   border-radius: 50% 50% 0 0 / 60% 60% 0 0;
   position: absolute;
@@ -511,7 +516,7 @@ body,
   align-items: center;
   cursor: pointer;
   border-radius: 50%;
-  padding: 6px;
+  padding: 5px;
   transition: transform 0.2s, filter 0.2s;
   z-index: 10;
 }
@@ -524,7 +529,7 @@ body,
   filter: drop-shadow(0 0 12px rgba(244,67,54,0.9));
 }
 
-.vuln-icon { font-size: 2.2em; display: block; line-height: 1; }
+.vuln-icon { font-size: 1.8em; display: block; line-height: 1; }
 
 .vuln-tag {
   position: absolute;
@@ -533,15 +538,15 @@ body,
   transform: translateX(-50%);
   background: var(--red);
   color: white;
-  padding: 3px 10px;
-  border-radius: 8px;
-  font-size: 0.62em;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.58em;
   white-space: nowrap;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.25s;
   font-weight: 700;
-  font-family: inherit;
+  font-family: 'Instrument Sans', sans-serif;
 }
 .vuln-spot.found .vuln-tag { opacity: 1; }
 
@@ -560,18 +565,18 @@ body,
 .scroll-visual {
   background: linear-gradient(135deg, #f5e6c8, #e8d5a3);
   color: #2a1a00;
-  border-radius: 12px;
-  padding: 0.8em 1.5em;
-  margin: 0.4em auto;
-  max-width: 500px;
+  border-radius: 10px;
+  padding: 0.65em 1.3em;
+  margin: 0.3em auto;
+  max-width: 460px;
   border: 3px solid #8B4513;
-  box-shadow: 0 6px 24px rgba(139,69,19,0.35);
+  box-shadow: 0 6px 20px rgba(139,69,19,0.35);
   font-family: Georgia, serif;
-  font-size: 1.0em;
-  line-height: 1.55;
+  font-size: 0.9em;
+  line-height: 1.5;
   position: relative;
 }
-.scroll-visual .scroll-cap { position: absolute; font-size: 2em; top: -0.45em; }
+.scroll-visual .scroll-cap { position: absolute; font-size: 1.8em; top: -0.4em; }
 .scroll-visual .scroll-cap.left  { left:  0.2em; }
 .scroll-visual .scroll-cap.right { right: 0.2em; }
 .scroll-flag { color: #cc0000; font-weight: bold; }
@@ -582,39 +587,39 @@ body,
 .story-box {
   background: rgba(4,30,66,0.7);
   border: 2px solid rgba(0,153,204,0.35);
-  border-radius: 12px;
-  padding: 0.7em 1.3em;
-  margin: 0.4em auto;
-  max-width: 560px;
-  font-size: 1.0em;
+  border-radius: 10px;
+  padding: 0.6em 1.2em;
+  margin: 0.3em auto;
+  max-width: 520px;
+  font-size: 0.9em;
   color: #aabbd0;
   font-style: italic;
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
 /* ============================================================
    GAME — VICTORY
 ============================================================ */
 .victory-badge {
-  width: 130px;
-  height: 130px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--cyan), var(--cyan2));
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3.8em;
-  margin: 0 auto 0.25em;
-  box-shadow: 0 0 50px rgba(0,240,255,0.5);
+  font-size: 3.2em;
+  margin: 0 auto 0.2em;
+  box-shadow: 0 0 46px rgba(0,240,255,0.5);
   animation: popIn 0.6s cubic-bezier(0.175,0.885,0.32,1.275) both;
 }
 
 .victory-message {
-  font-size: 1.05em;
+  font-size: 0.9em;
   color: #aabbd0;
-  max-width: 580px;
-  margin: 0.4em auto;
-  line-height: 1.6;
+  max-width: 560px;
+  margin: 0.35em auto;
+  line-height: 1.55;
 }
 
 /* ============================================================
@@ -640,14 +645,14 @@ body,
    ANIMATIONS
 ============================================================ */
 @keyframes floatIn {
-  from { opacity: 0; transform: translateY(16px); }
+  from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes wobble {
   0%,100% { transform: translateX(0); }
-  25%     { transform: translateX(-12px); }
-  75%     { transform: translateX(12px); }
+  25%     { transform: translateX(-10px); }
+  75%     { transform: translateX(10px); }
 }
 
 @keyframes pulseRing {
