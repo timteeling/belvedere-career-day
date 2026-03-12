@@ -173,10 +173,10 @@ function renderCastle() {
   }).join('');
 
   return `
-    <div class="castle-scene-wrapper float-in">
+    <div class="castle-scene-wrapper float-in${allFound ? ' castle-found' : ''}">
       ${progressDots()}
       <div class="game-heading">🏰 Mission 1: Spot the vulnerabilities!</div>
-      <div class="game-subheading">Can you find all 4 security problems? Click each one you spot!</div>
+      ${allFound ? '' : '<div class="game-subheading">Can you find all 4 security problems? Click each one you spot!</div>'}
       <div class="vuln-counter">🔍 Found: ${state.foundVulns.size} / ${VULNS.length}</div>
 
       <div class="castle-visual">

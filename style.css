@@ -360,6 +360,15 @@
 }
 
 /* ============================================================
+   GAME — CASTLE FOUND STATE (compact vertical)
+============================================================ */
+.castle-found .game-heading { font-size: 1em; margin-bottom: 0.1em; }
+.castle-found .vuln-counter { font-size: 0.8em; margin: 0.1em 0; }
+.castle-found .castle-visual { transform: scale(0.82); transform-origin: top center; margin-bottom: -28px; }
+.castle-found .feedback-box { font-size: 0.72em; padding: 0.4em 0.9em; margin-top: 0.3em; max-width: none; }
+.castle-found .game-btn { font-size: 0.9em; padding: 0.38em 1.4em; margin-top: 0.25em; }
+
+/* ============================================================
    GAME — TWO-COLUMN CHOICE LAYOUT
 ============================================================ */
 .choice-layout {
