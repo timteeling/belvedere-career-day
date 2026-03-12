@@ -32,7 +32,7 @@ const VULNS = [
 const CHOICE_SCENES = [
   {
     id: 'password',
-    heading: '🔐 Mission 2: Password Challenge!',
+    heading: '🔐 Mission 2: Password challenge!',
     sub: 'The castle door needs a secret password. Which one is the strongest?',
     choices: [
       {
@@ -54,7 +54,7 @@ const CHOICE_SCENES = [
   },
   {
     id: 'phishing',
-    heading: '📜 Mission 3: Suspicious Scroll!',
+    heading: '📜 Mission 3: Suspicious scroll!',
     sub: 'A mysterious scroll arrives at the castle gates…',
     scroll: true,
     scrollText: [
@@ -83,7 +83,7 @@ const CHOICE_SCENES = [
   },
   {
     id: 'sharing',
-    heading: '🤝 Mission 4: The Sharing Mistake!',
+    heading: '🤝 Mission 4: The sharing mistake!',
     sub: 'Guard Benny needs a day off…',
     story: '"Hey friend! My secret password is CASTLE123. Use it to get in while I\'m gone today!" 😬',
     choices: [
@@ -136,7 +136,7 @@ function renderIntro() {
   return `
     <div class="float-in" style="text-align:center;">
       <div class="intro-badge">🏰</div>
-      <div class="game-heading" style="font-size:2em;">Castle Security Adventure!</div>
+      <div class="game-heading" style="font-size:2em;">Castle security adventure!</div>
       <div class="game-subheading" style="font-size:1.1em; margin:0.4em auto 0.9em;">
         You are <strong style="color:var(--cyan);">Tenable's newest Security Inspector!</strong><br>
         Your mission: find every weakness before the bad guys do. 🕵️
@@ -175,7 +175,7 @@ function renderCastle() {
   return `
     <div class="castle-scene-wrapper float-in">
       ${progressDots()}
-      <div class="game-heading">🏰 Mission 1: Spot the Vulnerabilities!</div>
+      <div class="game-heading">🏰 Mission 1: Spot the vulnerabilities!</div>
       <div class="game-subheading">Can you find all 4 security problems? Click each one you spot!</div>
       <div class="vuln-counter">🔍 Found: ${state.foundVulns.size} / ${VULNS.length}</div>
 
@@ -251,17 +251,21 @@ function renderChoiceScene() {
   }).join('');
 
   return `
-    <div class="float-in" style="text-align:center;width:100%;max-width:660px;margin:0 auto;">
-      ${progressDots()}
-      <div class="game-heading">${data.heading}</div>
-      <div class="game-subheading">${data.sub}</div>
-      ${extra}
-      <div style="margin:0.4em 0;">${buttons}</div>
-      ${locked && state.feedbackHtml ? `
-        <div class="feedback-box float-in">${state.feedbackHtml}</div>
-        <button class="game-btn" onclick="advanceScene()" style="margin-top:0.35em;">
-          ${state.scene === 'sharing' ? '🏆 See Results!' : 'Next Mission ➡️'}
-        </button>` : ''}
+    <div class="float-in choice-layout">
+      <div class="choice-left">
+        ${progressDots()}
+        <div class="game-heading">${data.heading}</div>
+        <div class="game-subheading">${data.sub}</div>
+        ${extra}
+      </div>
+      <div class="choice-right">
+        ${buttons}
+        ${locked && state.feedbackHtml ? `
+          <div class="feedback-box float-in">${state.feedbackHtml}</div>
+          <button class="game-btn" onclick="advanceScene()" style="margin-top:0.2em;">
+            ${state.scene === 'sharing' ? '🏆 See Results!' : 'Next Mission ➡️'}
+          </button>` : ''}
+      </div>
     </div>`;
 }
 
@@ -304,21 +308,25 @@ function progressDots() {
 ------------------------------------------------------------------ */
 function renderVictory() {
   return `
-    <div class="float-in" style="text-align:center;">
-      <div class="victory-badge">🛡️</div>
-      <div class="game-heading" style="font-size:2em;margin:0.1em 0;">YOU DID IT!</div>
-      <div class="game-heading" style="font-size:1.25em;color:#fff;font-weight:600;">
-        Official Digital Security Superhero! ⚔️🎉
+    <div class="float-in victory-layout">
+      <div class="victory-left">
+        <div class="victory-badge">🛡️</div>
+        <div style="font-size:1.8em;margin:0.3em 0;">🏰 🛡️ ⚔️ 🌟</div>
       </div>
-      <div style="font-size:2em;margin:0.25em 0;">🏰 🛡️ ⚔️ 🌟</div>
-      <div class="victory-message">
-        <strong>Just like you</strong>, Tenable's Security Inspectors find vulnerabilities, spot phishing tricks,
-        and protect passwords — for <strong style="color:var(--cyan);">40,000+ organizations</strong> around the world every single day!
+      <div class="victory-right">
+        <div class="game-heading" style="font-size:1.6em;margin:0 0 0.05em;">YOU DID IT!</div>
+        <div class="game-heading" style="font-size:0.98em;color:#fff;font-weight:600;margin:0 0 0.2em;">
+          Official Digital Security Superhero! ⚔️🎉
+        </div>
+        <div class="victory-message" style="margin:0 0 0.25em;">
+          <strong>Just like you</strong>, Tenable's Security Inspectors find vulnerabilities, spot phishing tricks,
+          and protect passwords — for <strong style="color:var(--cyan);">40,000+ organizations</strong> around the world every single day!
+        </div>
+        <p style="font-size:0.85em;color:#446;margin:0 0 0.35em;">
+          The world needs more cybersecurity superheroes. Maybe that's <strong style="color:var(--cyan);">YOU</strong> someday! 🚀
+        </p>
+        <button class="game-btn secondary" onclick="restartGame()">🔄 Play Again</button>
       </div>
-      <p style="font-size:0.9em;color:#446;margin-top:0.4em;">
-        The world needs more cybersecurity superheroes. Maybe that's <strong style="color:var(--cyan);">YOU</strong> someday! 🚀
-      </p>
-      <button class="game-btn secondary" onclick="restartGame()" style="margin-top:0.4em;">🔄 Play Again</button>
     </div>`;
 }
 

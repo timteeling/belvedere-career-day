@@ -344,17 +344,131 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 #game-container {
   width: 100%;
+  height: 100%;
   max-height: 700px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10px 20px;
+  padding: 10px 28px;
   box-sizing: border-box;
+}
+
+/* ============================================================
+   GAME — TWO-COLUMN CHOICE LAYOUT
+============================================================ */
+.choice-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  width: 100%;
+  max-width: 960px;
+  align-items: start;
+  text-align: left;
+}
+
+.choice-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.choice-right {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.choice-layout .game-progress {
+  justify-content: flex-start;
+  margin-bottom: 0.3em;
+}
+
+.choice-layout .choice-btn {
+  width: 100%;
+  max-width: none;
+  margin: 0.08em 0;
+  padding: 0.35em 1em;
+  font-size: 0.86em;
+}
+
+.choice-layout .feedback-box {
+  max-width: none;
+  margin: 0.2em 0 0.12em;
+  font-size: 0.78em;
+  padding: 0.42em 0.9em;
+}
+
+.choice-layout .game-btn {
+  font-size: 0.9em;
+  padding: 0.38em 1.4em;
+}
+
+.choice-layout .game-heading {
+  font-size: 1.1em;
+  margin-bottom: 0.15em;
+}
+
+.choice-layout .game-subheading {
+  font-size: 0.78em;
+  margin-bottom: 0.25em;
+}
+
+.choice-layout .scroll-visual {
+  max-width: 100%;
+  margin: 0.2em 0;
+  font-size: 0.62em;
+  padding: 0.5em 0.9em;
+}
+
+.choice-layout .story-box {
+  max-width: 100%;
+  margin: 0.2em 0;
+  font-size: 0.82em;
+  padding: 0.45em 0.9em;
+}
+
+/* ============================================================
+   GAME — TWO-COLUMN VICTORY LAYOUT
+============================================================ */
+.victory-layout {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 32px;
+  width: 100%;
+  max-width: 900px;
+  align-items: center;
+  text-align: left;
+}
+
+.victory-left {
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.victory-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.victory-right .victory-message {
+  max-width: none;
+  font-size: 0.82em;
+}
+
+.victory-right p {
+  max-width: none;
+}
+
+.victory-badge {
+  width: 86px;
+  height: 86px;
+  font-size: 2.6em;
 }
 
 /* ============================================================
